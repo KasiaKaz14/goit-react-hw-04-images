@@ -19,24 +19,21 @@ export function App() {
     getImages(imageItem, page);
   }, [imageItem, page]);
 
-  const getImages = useCallback(
-    async (image, page) => {
-      setIsLoading(true);
-      if (!image) {
-        return;
-      }
-      try {
-        const { hits, totalHits } = await fetchImages(image, page);
-        setImages(prevImages => [...prevImages, ...hits]);
-        setLoadMore(page < Math.ceil(totalHits / 12));
-      } catch (error) {
-        console.log(error);
-      } finally {
-        setIsLoading(false);
-      }
-    },
-    [imageItem, page]
-  );
+  const getImages = useCallback(async (image, page) => {
+    setIsLoading(true);
+    if (!image) {
+      return;
+    }
+    try {
+      const { hits, totalHits } = await fetchImages(image, page);
+      setImages(prevImages => [...prevImages, ...hits]);
+      setLoadMore(page < Math.ceil(totalHits / 12));
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setIsLoading(false);
+    }
+  }, []);
 
   const handleFormSubmit = imageItem => {
     setImageItem(imageItem);
