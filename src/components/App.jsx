@@ -17,9 +17,9 @@ export function App() {
 
   useEffect(() => {
     getImages(imageItem, page);
-  }, [imageItem, page]);
+  }, [getImages, imageItem, page]);
 
-  const getImages = useCallback(async (image, page) => {
+  const getImages = async (image, page) => {
     setIsLoading(true);
     if (!image) {
       return;
@@ -33,7 +33,8 @@ export function App() {
     } finally {
       setIsLoading(false);
     }
-  }, []);
+  };
+  []);
 
   const handleFormSubmit = imageItem => {
     setImageItem(imageItem);
