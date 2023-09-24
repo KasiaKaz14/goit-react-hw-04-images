@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import css from './ImageGalleryItem.module.css';
 
 export const ImageGalleryItem = ({ src, alt, largeImageURL, openModal }) => {
