@@ -1,18 +1,18 @@
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 import css from './Modal.module.css';
 
 export const Modal = ({ largeImageURL, onClose }) => {
-  const handleKeyDown = event => {
-    if (event.code === 'Escape') {
-      onClose();
-    }
-  };
   const handleImageClick = event => {
     if (event.currentTarget === event.target) {
       onClose();
     }
   };
   useEffect(() => {
+    const handleKeyDown = event => {
+      if (event.code === 'Escape') {
+        onClose();
+      }
+    };
     window.addEventListener('keydown', handleKeyDown);
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
