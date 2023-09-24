@@ -3,22 +3,23 @@ import css from './Modal.module.css';
 
 export const Modal = ({ largeImageURL, onClose }) => {
   const handleImageClick = event => {
-    if (event.currentTarget === event.arget) {
+    if (event.code === event.arget) {
+      onClose();
+    }
+  };
+
+  const handleKeyDown = event => {
+    if (event.code === 'Escape') {
       onClose();
     }
   };
 
   useEffect(() => {
-    const handleKeyDown = event => {
-      if (event.code === 'Escape') {
-        onClose();
-      }
-    };
     window.addEventListener('keydown', handleKeyDown);
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, []);
+  }, [onClose]);
 
   return (
     <div className={css.overlay} onClick={handleImageClick}>
