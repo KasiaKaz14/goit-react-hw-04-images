@@ -3,7 +3,7 @@ import css from './Modal.module.css';
 
 export const Modal = ({ largeImageURL, onClose }) => {
   const handleImageClick = event => {
-    if (event.currentTarget === event.currentTarget) {
+    if (event.currentTarget === event.target) {
       onClose();
     }
   };
