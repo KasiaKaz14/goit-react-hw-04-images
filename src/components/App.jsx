@@ -35,7 +35,7 @@ export function App() {
         setIsLoading(false);
       }
     },
-    [getImages(imageItem, page)]
+    [imageItem, page]
   );
 
   const handleFormSubmit = imageItem => {
