@@ -30,7 +30,7 @@ export function App() {
       setImages(prevImages => [...prevImages, ...hits]);
       setLoadMore(page < Math.ceil(totalHits / 12));
     } catch (error) {
-      setError({ error });
+      setError({ error: error.message });
     } finally {
       setIsLoading(false);
     }
