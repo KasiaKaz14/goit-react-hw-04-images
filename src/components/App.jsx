@@ -17,7 +17,7 @@ export function App() {
 
   useEffect(() => {
     getImages(imageItem, page);
-  }, [getImages, imageItem, page]);
+  }, [imageItem, page]);
 
   const getImages = async (image, page) => {
     setIsLoading(true);
@@ -34,7 +34,6 @@ export function App() {
       setIsLoading(false);
     }
   };
-  []);
 
   const handleFormSubmit = imageItem => {
     setImageItem(imageItem);
