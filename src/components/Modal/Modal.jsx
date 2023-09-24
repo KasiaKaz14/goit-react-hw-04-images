@@ -19,7 +19,7 @@ export const Modal = ({ largeImageURL, onClose }) => {
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, [handleKeyDown, onClose]);
+  }, []);
 
   return (
     <div className={css.overlay} onClick={handleImageClick}>
