@@ -1,4 +1,5 @@
 import css from './ImageGalleryItem.module.css';
+import PropTypes from 'prop-types';
 
 export const ImageGalleryItem = ({ src, alt, largeImageURL, openModal }) => {
   const handleClick = () => {
