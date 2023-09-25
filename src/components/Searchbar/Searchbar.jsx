@@ -40,3 +40,7 @@ export const Searchbar = ({ onSubmit }) => {
     </header>
   );
 };
+
+Searchbar.propTypes = {
+  onSubmit: propTypes.func,
+};

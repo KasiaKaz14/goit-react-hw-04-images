@@ -17,3 +17,12 @@ export const ImageGallery = ({ images, openModal }) => {
     </ul>
   );
 };
+
+ImageGallery.propTypes = {
+  images: PropTypes.array,
+  id: PropTypes.number,
+  webformatURL: PropTypes.string,
+  largeImageURL: PropTypes.string,
+  tags: PropTypes.string,
+  openModal: PropTypes.func,
+};

@@ -4,7 +4,7 @@ import { Searchbar } from './Searchbar/Searchbar';
 import { Button } from './Button/Button';
 import { Modal } from './Modal/Modal';
 import { ImageGallery } from './ImageGallery/ImageGallery';
-import { fetchImages } from './Images/Images';
+import { fetchImages } from 'API/ApiImages';
 
 export function App() {
   const [images, setImages] = useState([]);
